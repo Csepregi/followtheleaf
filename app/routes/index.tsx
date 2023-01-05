@@ -1,41 +1,69 @@
-import { Link } from "@remix-run/react";
+import IntroductionIndexPage from "./introduction";
+import WhatWeIndexPage from "./aboutus";
 
-import { useOptionalUser } from "~/utils";
+const navigation = [
+  { name: "Who we are", href: "/introduction" },
+  { name: "What We Do", href: "/aboutus" },
+];
 
 export default function Index() {
-  const user = useOptionalUser();
   return (
-    <main className="relative min-h-screen bg-white sm:flex sm:items-center sm:justify-center">
-      <div className="relative sm:pb-16 sm:pt-8">
-        <div className="mx-auto max-w-7xl sm:px-6 lg:px-8">
-          <div className="relative shadow-xl sm:overflow-hidden sm:rounded-2xl">
-            <div className="absolute inset-0">
-              <img
-                className="h-full w-full object-cover"
-                src="./header.jpg"
-                alt="Sonic Youth On Stage"
-              />
-              <div className="absolute inset-0 bg-[color:rgba(254,204,27,0.5)] mix-blend-multiply" />
-            </div>
-            <div className="relative px-4 pt-16 pb-8 sm:px-6 sm:pt-24 sm:pb-14 lg:px-8 lg:pb-20 lg:pt-32">
-              <h1 className="text-center text-6xl font-extrabold tracking-tight sm:text-8xl lg:text-9xl">
-                <span className="block uppercase text-yellow-500 drop-shadow-md">
-                  UNDER CONSTRUCTION
-                </span>
-              </h1>
-              <h2 className="mx-auto mt-6 max-w-lg text-center text-xl text-white sm:text-6xl lg:text-6xl">
-                Follow The Leaf
-              </h2>
-
-              <img
-                src="./Logo.png"
-                alt="FollowTheLeaf"
-                className="mx-auto mt-16 w-full max-w-[12rem] md:max-w-[16rem]"
-              />
+    <div className="h-screen w-screen snap-y snap-mandatory overflow-scroll">
+      <div className="flex h-screen w-screen snap-start">
+        <div className="min-h-screen w-full bg-cover-pic bg-cover bg-center object-cover">
+          <div className="absolute inset-x-0 top-[-10rem] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[-20rem]"></div>
+          <div className="px-6 pt-6 lg:px-8">
+            <div>
+              <nav
+                className="flex h-9 items-center justify-between"
+                aria-label="Global"
+              >
+                <div className="mr-9 flex" aria-label="Global">
+                  <a href="#" className="-m-1.5 p-1.5">
+                    <span className="sr-only">Your Company</span>
+                    <img className="h-8" src="./Logo.png" alt="" />
+                  </a>
+                </div>
+                <div className="hidden lg:left-0 lg:flex lg:min-w-0 lg:flex-1  lg:gap-x-12">
+                  {navigation.map((item) => (
+                    <a
+                      key={item.name}
+                      href={item.href}
+                      className="hover:text-gray-900 font-semibold text-black"
+                    >
+                      {item.name}
+                    </a>
+                  ))}
+                </div>
+              </nav>
             </div>
           </div>
+          <main>
+            <div className="relative px-6 lg:px-8">
+              <div className="max-w-3xl items-start pt-20 pb-32 sm:pt-48 sm:pb-40">
+                <div>
+                  <div>
+                    <h1 className="text-heading-md max-w-550     text-orange sm:text-6xl">
+                      Follow The Leaf
+                    </h1>
+                    {/* <p className="mt-6 text-lg leading-8 text-orange ">
+                      Anim aute id magna aliqua ad ad non deserunt sunt. Qui
+                      irure qui lorem cupidatat commodo. Elit sunt amet fugiat
+                      veniam occaecat fugiat aliqua.
+                    </p> */}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </main>
         </div>
       </div>
-    </main>
+      <div className="flex h-screen w-screen snap-start">
+        <IntroductionIndexPage />
+      </div>
+      <div className="flex h-screen w-screen snap-start bg-white">
+        <WhatWeIndexPage />
+      </div>
+    </div>
   );
 }
