@@ -25,5 +25,5 @@ module.exports = {
       bermuda: "#78dcca",
     },
   },
-  plugins: [require("daisyui"), "@tailwindcss/aspect-ratio"],
+  plugins: ["@tailwindcss/aspect-ratio"],
 };
