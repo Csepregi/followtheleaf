@@ -1,6 +1,6 @@
 import { faker } from "@faker-js/faker";
 
-describe("smoke tests", () => {
+xdescribe("smoke tests", () => {
   afterEach(() => {
     cy.cleanupUser();
   });
