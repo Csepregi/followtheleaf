@@ -99,45 +99,43 @@ import Navbar from "../navbar";
 const projects = [
   {
     id: 1,
-    name: "Basic Tee",
+    program: "Youth exchanges and young mobility programs.",
     href: "#",
     imageSrc: "card1.jpg",
-    imageAlt: "Front of men's Basic Tee in black.",
-    price: "$35",
-    color: "Black",
+    imageAlt: "youthExchange",
+    moreInfo: "Explore more",
   },
   {
-    id: 1,
-    name: "Basic Tee",
+    id: 2,
+    program:
+      "Do you want to live an amazing experience abroad? Discover the project that interest you the most.",
     href: "#",
     imageSrc: "card2.jpg",
-    imageAlt: "Front of men's Basic Tee in black.",
-    price: "$35",
-    color: "Black",
+    imageAlt: "experience",
+    moreInfo: "Explore more",
   },
   {
-    id: 1,
-    name: "Basic Tee",
+    id: 3,
+    program: "Local activities. Explore what we do for our community.",
     href: "#",
     imageSrc: "card3.jpg",
-    imageAlt: "Front of men's Basic Tee in black.",
-    price: "$35",
-    color: "Black",
+    imageAlt: "activities",
+    moreInfo: "Explore more",
   },
-  // More products...
 ];
 
 export default function WhatWeIndexPage() {
   return (
-    <div className="relative overflow-hidden bg-white py-24 sm:py-32 lg:py-40">
-      <h2 className="text-gray-900 mt-10 text-center   text-2xl font-bold tracking-tight lg:px-8">
+    <div className="relative min-h-screen w-full overflow-hidden bg-whatwe-pic bg-cover bg-center object-cover">
+      <Navbar />
+      <h2 className="text-gray-900 mt-10 pt-10 text-center text-2xl font-bold   tracking-tight sm:py-32 lg:px-8 lg:pt-10">
         What we do
       </h2>
 
-      <div className="mt-6 grid grid-cols-1 content-center gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
+      <div className="mx-10 mt-6 mr-10 grid  grid-cols-1 content-center gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-3 xl:gap-x-8">
         {projects.map((project) => (
           <div key={project.id} className="group relative">
-            <div className="min-h-80 aspect-w-1 aspect-h-1 bg-gray-200 lg:aspect-none w-full overflow-hidden rounded-md group-hover:opacity-75 lg:h-80">
+            <div className="aspect-w-4 aspect-h-5 lg:aspect-w-3 lg:aspect-h-4 sm:overflow-hidden sm:rounded-lg">
               <img
                 src={project.imageSrc}
                 alt={project.imageAlt}
@@ -149,14 +147,11 @@ export default function WhatWeIndexPage() {
                 <h3 className="text-gray-700 text-sm">
                   <a href={project.href}>
                     <span aria-hidden="true" className="absolute inset-0" />
-                    {project.name}
+                    {project.program}
                   </a>
                 </h3>
-                <p className="text-gray-500 mt-1 text-sm">{project.color}</p>
+                <p className="text-gray-500 mt-1 text-sm">{project.moreInfo}</p>
               </div>
-              <p className="text-gray-900 text-sm font-medium">
-                {project.price}
-              </p>
             </div>
           </div>
         ))}
