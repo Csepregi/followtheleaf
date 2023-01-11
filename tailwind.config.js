@@ -25,5 +25,22 @@ module.exports = {
       bermuda: "#78dcca",
     },
   },
-  plugins: ["@tailwindcss/aspect-ratio"],
+  plugins: [
+    "@tailwindcss/aspect-ratio",
+    function ({ addComponents }) {
+      const navbar = {
+        ".navbar": {
+          position: "sticky",
+          top: 0,
+          padding: "8px",
+          boxShadow: "0px 2px 5px hsl(0deg 0% 0% / 0.2)",
+          display: "flex",
+          justifyContent: "start",
+          background: "white",
+          transition: "transform 350ms",
+        },
+      };
+      addComponents(navbar);
+    },
+  ],
 };

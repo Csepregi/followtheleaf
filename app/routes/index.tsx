@@ -17,11 +17,10 @@ export default function Index() {
                     <h1 className="text-heading-md max-w-550     text-orange sm:text-6xl">
                       Follow The Leaf
                     </h1>
-                    {/* <p className="mt-6 text-lg leading-8 text-orange ">
-                      Anim aute id magna aliqua ad ad non deserunt sunt. Qui
-                      irure qui lorem cupidatat commodo. Elit sunt amet fugiat
-                      veniam occaecat fugiat aliqua.
-                    </p> */}
+                    <p className="mt-6 text-lg leading-8 text-orange ">
+                      Explore together the way to live in a more sustainable
+                      world
+                    </p>
                   </div>
                 </div>
               </div>

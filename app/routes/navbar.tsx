@@ -1,44 +1,9 @@
-// const navigation = [
-//   { name: "Who we are", href: "/introduction" },
-//   { name: "What We Do", href: "/aboutus" },
-// ];
-
-// export function Navbar() {
-//   return (
-//     <div className="px-6 pt-6 lg:px-8">
-//       <div>
-//         <nav
-//           className="flex h-9 items-center justify-between"
-//           aria-label="Global"
-//         >
-//           <div className="mr-9 flex" aria-label="Global">
-//             <a href="#" className="-m-1.5 p-1.5">
-//               <span className="sr-only">Your Company</span>
-//               <img className="h-8" src="./Logo.png" alt="" />
-//             </a>
-//           </div>
-//           <div className="hidden lg:left-0 lg:flex lg:min-w-0 lg:flex-1  lg:gap-x-12">
-//             {navigation.map((item) => (
-//               <a
-//                 key={item.name}
-//                 href={item.href}
-//                 className="hover:text-gray-900 font-semibold text-black"
-//               >
-//                 {item.name}
-//               </a>
-//             ))}
-//           </div>
-//         </nav>
-//       </div>
-//     </div>
-//   );
-// }
-
+import { useEffect, useState } from "react";
 import { Disclosure } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 
 const navigation = [
-  { name: "Main", href: "/", current: true },
+  { name: "Home", href: "/", current: true },
   { name: "Who we are", href: "/introduction", current: true },
   { name: "What We Do", href: "/aboutus", current: true },
 ];
@@ -47,12 +12,51 @@ function classNames(...classes: any) {
   return classes.filter(Boolean).join(" ");
 }
 
+const HEADER_HIDE_THRESHOLD = 400;
+
 export default function Navbar() {
+  const [isHeaderVisible, setIsHeaderVisible] = useState(true);
+
+  useEffect(() => {
+    let previousScrollValue: any;
+
+    function handleScroll(ev: any) {
+      const currentScroll = window.scrollY;
+
+      if (typeof previousScrollValue !== "number") {
+        previousScrollValue = currentScroll;
+        return;
+      }
+
+      const direction = currentScroll > previousScrollValue ? "down" : "up";
+
+      if (
+        isHeaderVisible &&
+        direction === "down" &&
+        currentScroll > HEADER_HIDE_THRESHOLD
+      ) {
+        setIsHeaderVisible(false);
+      } else if (!isHeaderVisible && direction === "up") {
+        setIsHeaderVisible(true);
+      }
+
+      previousScrollValue = currentScroll;
+    }
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [isHeaderVisible]);
+
+  const transform = isHeaderVisible ? "translateY(0%)" : "translateY(-100%)";
+
   return (
-    <Disclosure as="nav" className="bg-gray-800">
+    <Disclosure as="nav" className="bg-gray-800 navbar" style={{ transform }}>
       {({ open }) => (
         <>
-          <div className="max-w mx-auto px-2 sm:px-6 lg:px-8">
+          <div className="max-w my-custom-style mx-auto px-2 sm:px-6 lg:px-8">
             <div className="relative flex h-16 items-center justify-between">
               <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
                 {/* Mobile menu button*/}

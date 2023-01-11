@@ -4,10 +4,10 @@ export default function IntroductionIndexPage() {
   return (
     <>
       <div className="lg:grid lg:grid-cols-2">
-        <div className="hidden min-h-screen w-full bg-introduction-pic bg-cover bg-center object-cover md:block">
-          <div className="min-h-screen w-full">
+        <div className="min-h-screen w-full bg-introduction-pic bg-cover bg-center object-cover md:block">
+          {/* <div className="min-h-screen w-full">
             <Navbar />
-          </div>
+          </div> */}
         </div>
         <div className="group relative bg-white">
           <div className="mt-10 sm:text-center">
