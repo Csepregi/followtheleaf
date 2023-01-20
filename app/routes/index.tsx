@@ -14,7 +14,7 @@ export default function Index() {
               <div className="max-w-3xl items-start pt-20 pb-32 sm:pt-48 sm:pb-40">
                 <div>
                   <div>
-                    <h1 className="text-heading-md max-w-550     text-orange sm:text-6xl">
+                    <h1 className="text-heading-md max-w-550   sm:text-6xl">
                       Follow The Leaf
                     </h1>
                     <p className="mt-6 text-lg leading-8 text-orange ">

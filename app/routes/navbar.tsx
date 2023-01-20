@@ -6,6 +6,7 @@ const navigation = [
   { name: "Home", href: "/", current: true },
   { name: "Who we are", href: "/introduction", current: true },
   { name: "What We Do", href: "/aboutus", current: true },
+  { name: "Programs", href: "/programs", current: true },
 ];
 
 function classNames(...classes: any) {
@@ -53,12 +54,16 @@ export default function Navbar() {
   const transform = isHeaderVisible ? "translateY(0%)" : "translateY(-100%)";
 
   return (
-    <Disclosure as="nav" className="bg-gray-800 navbar" style={{ transform }}>
+    <Disclosure
+      as="nav"
+      className="bg-gray-800 max-w navbar"
+      style={{ transform }}
+    >
       {({ open }) => (
         <>
-          <div className="max-w my-custom-style mx-auto px-2 sm:px-6 lg:px-8">
+          <div className="mx-auto  px-2 sm:px-6 lg:px-8">
             <div className="relative flex h-16 items-center justify-between">
-              <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
+              <div className="absolute inset-y-0 left-0 flex  sm:hidden">
                 {/* Mobile menu button*/}
                 <Disclosure.Button className="text-gray-400 hover:bg-gray-700 inline-flex items-center justify-center rounded-md p-2 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
                   <span className="sr-only">Open main menu</span>
@@ -69,7 +74,7 @@ export default function Navbar() {
                   )}
                 </Disclosure.Button>
               </div>
-              <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
+              <div className="flex flex-1  justify-center sm:items-stretch sm:justify-start">
                 <div className="flex flex-shrink-0 items-center">
                   <img
                     className="block h-8 w-auto lg:hidden"
