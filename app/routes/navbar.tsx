@@ -1,137 +1,143 @@
-import { useEffect, useState } from "react";
-import { Disclosure } from "@headlessui/react";
+import { Fragment } from "react";
+import { Popover, Transition } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
-
-const navigation = [
-  { name: "Home", href: "/", current: true },
-  { name: "Who we are", href: "/introduction", current: true },
-  { name: "What We Do", href: "/aboutus", current: true },
-  { name: "Programs", href: "/programs", current: true },
-];
-
-function classNames(...classes: any) {
-  return classes.filter(Boolean).join(" ");
-}
-
-const HEADER_HIDE_THRESHOLD = 400;
+import { NavLink } from "@remix-run/react";
+import { useScrollPostion } from "~/hooks/useScrollPosition";
 
 export default function Navbar() {
-  const [isHeaderVisible, setIsHeaderVisible] = useState(true);
+  const scrollPositions = useScrollPostion();
 
-  useEffect(() => {
-    let previousScrollValue: any;
+  const activeClassName = "underline decoration-green-800";
+  console.log("scrollpo ", scrollPositions);
 
-    function handleScroll(ev: any) {
-      const currentScroll = window.scrollY;
-
-      if (typeof previousScrollValue !== "number") {
-        previousScrollValue = currentScroll;
-        return;
-      }
-
-      const direction = currentScroll > previousScrollValue ? "down" : "up";
-
-      if (
-        isHeaderVisible &&
-        direction === "down" &&
-        currentScroll > HEADER_HIDE_THRESHOLD
-      ) {
-        setIsHeaderVisible(false);
-      } else if (!isHeaderVisible && direction === "up") {
-        setIsHeaderVisible(true);
-      }
-
-      previousScrollValue = currentScroll;
-    }
-
-    window.addEventListener("scroll", handleScroll);
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, [isHeaderVisible]);
-
-  const transform = isHeaderVisible ? "translateY(0%)" : "translateY(-100%)";
+  function classNames(...classes: any) {
+    return classes.filter(Boolean).join(" ");
+  }
 
   return (
-    <Disclosure
-      as="nav"
-      className="bg-gray-800 max-w navbar"
-      style={{ transform }}
+    <Popover
+      className={classNames(
+        scrollPositions
+          ? "fixed top-0  w-full bg-white transition"
+          : "invisible top-0 transition-opacity delay-500 duration-300 ease-out"
+      )}
     >
-      {({ open }) => (
-        <>
-          <div className="mx-auto  px-2 sm:px-6 lg:px-8">
-            <div className="relative flex h-16 items-center justify-between">
-              <div className="absolute inset-y-0 left-0 flex  sm:hidden">
-                {/* Mobile menu button*/}
-                <Disclosure.Button className="text-gray-400 hover:bg-gray-700 inline-flex items-center justify-center rounded-md p-2 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
-                  <span className="sr-only">Open main menu</span>
-                  {open ? (
-                    <XMarkIcon className="block h-6 w-6" aria-hidden="true" />
-                  ) : (
-                    <Bars3Icon className="block h-6 w-6" aria-hidden="true" />
-                  )}
-                </Disclosure.Button>
+      <div className="mx-auto max-w-7xl  px-6 py-2">
+        <div className="flex items-center justify-between  py-2 laptop:justify-start">
+          <div className=" inline-flex  laptop:w-0 laptop:flex-1">
+            <a href="/">
+              <h1 className="text-3xl  font-bold uppercase text-green">
+                Follow The Leaf
+              </h1>
+              {/* <img
+                className="lg:col-span-1 col-span-2 inline max-h-12 w-full object-contain"
+                src="/Logo.png"
+                alt=""
+                width={258}
+                height={58}
+              /> */}
+            </a>
+          </div>
+          <div className="-my-2 -mr-2 laptop:hidden">
+            <Popover.Button className="text-gray-400 hover:bg-gray-100 hover:text-gray-500 focus:ring-indigo-500 inline-flex items-center justify-center rounded-md bg-white p-2 focus:outline-none focus:ring-2 focus:ring-inset">
+              <span className="sr-only">Open menu</span>
+              <Bars3Icon className="h-6 w-6" aria-hidden="true" />
+            </Popover.Button>
+          </div>
+          <Popover.Group
+            as="nav"
+            className="hidden space-x-10 tablet:flex laptop:items-center "
+          >
+            <NavLink
+              to="/"
+              className={({ isActive }) =>
+                isActive ? activeClassName : undefined
+              }
+            >
+              Home
+            </NavLink>
+            <NavLink
+              to="/aboutus"
+              className={({ isActive }) =>
+                isActive ? activeClassName : undefined
+              }
+            >
+              About us
+            </NavLink>
+            <NavLink
+              to="/ouractivities"
+              className={({ isActive }) =>
+                isActive ? activeClassName : undefined
+              }
+            >
+              Our activities
+            </NavLink>
+          </Popover.Group>
+        </div>
+      </div>
+
+      <Transition
+        as={Fragment}
+        enter="duration-200 ease-out"
+        enterFrom="opacity-0 scale-95"
+        enterTo="opacity-100 scale-100"
+        leave="duration-100 ease-in"
+        leaveFrom="opacity-100 scale-100"
+        leaveTo="opacity-0 scale-95"
+      >
+        <Popover.Panel
+          focus
+          className="absolute inset-x-0 top-0 origin-top-right transform p-2 transition laptop:hidden"
+        >
+          <div className="divide-gray-50 divide-y-2 rounded-lg bg-white shadow-lg ring-1 ring-black ring-opacity-5">
+            <div className="px-5 pt-5 pb-6">
+              <div className="flex items-center justify-between">
+                <div>
+                  <img
+                    className="h-8 w-auto"
+                    src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
+                    alt="Your Company"
+                  />
+                </div>
+                <div className="-mr-2">
+                  <Popover.Button className="text-gray-400 hover:bg-gray-100 hover:text-gray-500 focus:ring-indigo-500 inline-flex items-center justify-center rounded-md bg-white p-2 focus:outline-none focus:ring-2 focus:ring-inset">
+                    <span className="sr-only">Close menu</span>
+                    <XMarkIcon className="h-6 w-6" aria-hidden="true" />
+                  </Popover.Button>
+                </div>
               </div>
-              <div className="flex flex-1  justify-center sm:items-stretch sm:justify-start">
-                <div className="flex flex-shrink-0 items-center">
-                  <img
-                    className="block h-8 w-auto lg:hidden"
-                    src="./Logo.png"
-                    alt="Logo"
-                  />
-                  <img
-                    className="hidden h-8 w-auto lg:block"
-                    src="./Logo.png"
-                    alt="Logo"
-                  />
-                </div>
-                <div className="hidden sm:ml-6 sm:block">
-                  <div className="flex space-x-4">
-                    {navigation.map((item) => (
-                      <a
-                        key={item.name}
-                        href={item.href}
-                        className={classNames(
-                          item.current
-                            ? "bg-gray-900 text-black"
-                            : "text-gray-300 hover:bg-gray-700 hover:text-black",
-                          "rounded-md px-3 py-2 text-sm font-medium"
-                        )}
-                        aria-current={item.current ? "page" : undefined}
-                      >
-                        {item.name}
-                      </a>
-                    ))}
-                  </div>
-                </div>
+            </div>
+            <div className="space-y-6 py-6 px-5">
+              <div className="grid grid-cols-2 gap-y-4 gap-x-8">
+                <NavLink
+                  to="/"
+                  className={({ isActive }) =>
+                    isActive ? activeClassName : undefined
+                  }
+                >
+                  Home
+                </NavLink>
+                <NavLink
+                  to="/introduction"
+                  className={({ isActive }) =>
+                    isActive ? activeClassName : undefined
+                  }
+                >
+                  introduction
+                </NavLink>
+                <NavLink
+                  to="/aboutus"
+                  className={({ isActive }) =>
+                    isActive ? activeClassName : undefined
+                  }
+                >
+                  About US
+                </NavLink>
               </div>
             </div>
           </div>
-
-          <Disclosure.Panel className="sm:hidden">
-            <div className="space-y-1 px-2 pt-2 pb-3">
-              {navigation.map((item) => (
-                <Disclosure.Button
-                  key={item.name}
-                  as="a"
-                  href={item.href}
-                  className={classNames(
-                    item.current
-                      ? "bg-gray-900 text-white"
-                      : "text-gray-300 hover:bg-gray-700 hover:text-white",
-                    "block rounded-md px-3 py-2 text-base font-medium"
-                  )}
-                  aria-current={item.current ? "page" : undefined}
-                >
-                  {item.name}
-                </Disclosure.Button>
-              ))}
-            </div>
-          </Disclosure.Panel>
-        </>
-      )}
-    </Disclosure>
+        </Popover.Panel>
+      </Transition>
+    </Popover>
   );
 }

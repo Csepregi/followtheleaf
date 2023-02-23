@@ -9,6 +9,7 @@ import {
   ScrollRestoration,
 } from "@remix-run/react";
 import styles from "./styles/style.css";
+import globalStyles from "./styles/globalStyles.css";
 
 import tailwindStylesheetUrl from "./styles/tailwind.css";
 import { getUser } from "./session.server";
@@ -17,6 +18,7 @@ export const links: LinksFunction = () => {
   return [
     { rel: "stylesheet", href: tailwindStylesheetUrl },
     { rel: "stylesheet", href: styles },
+    { rel: "stylesheet", href: globalStyles },
   ];
 };
 

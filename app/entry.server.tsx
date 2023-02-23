@@ -1,9 +1,11 @@
 import { PassThrough } from "stream";
+import { renderToString } from "react-dom/server";
 import type { EntryContext } from "@remix-run/node";
 import { Response } from "@remix-run/node";
 import { RemixServer } from "@remix-run/react";
 import isbot from "isbot";
 import { renderToPipeableStream } from "react-dom/server";
+import { ServerStyleSheet } from "styled-components";
 
 const ABORT_DELAY = 5000;
 
@@ -25,11 +27,19 @@ export default function handleRequest(
       {
         [callbackName]: () => {
           const body = new PassThrough();
+          const sheet = new ServerStyleSheet();
+
+          let markup = renderToString(
+            sheet.collectStyles(
+              <RemixServer context={remixContext} url={request.url} />
+            )
+          );
+          const styles = sheet.getStyleTags();
 
           responseHeaders.set("Content-Type", "text/html");
 
           resolve(
-            new Response(body, {
+            new Response("<!DOCTYPE html>" + markup, {
               headers: responseHeaders,
               status: didError ? 500 : responseStatusCode,
             })
