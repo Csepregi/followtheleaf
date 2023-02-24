@@ -6,7 +6,7 @@ export default function OurActivities() {
   return (
     <div className="min-h-screen w-full bg-white py-32 py-24">
       {location.pathname === "/ouractivities" && <Navbar />}
-      <div className="mx-auto max-w-2xl laptop:text-center">
+      <div className="mx-auto max-w-2xl text-center">
         <h1 className="text-indigo-600 text-5xl font-semibold  tracking-tight">
           Our activities
         </h1>

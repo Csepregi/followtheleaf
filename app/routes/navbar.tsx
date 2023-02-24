@@ -29,13 +29,6 @@ export default function Navbar() {
               <h1 className="text-3xl  font-bold uppercase text-green">
                 Follow The Leaf
               </h1>
-              {/* <img
-                className="lg:col-span-1 col-span-2 inline max-h-12 w-full object-contain"
-                src="/Logo.png"
-                alt=""
-                width={258}
-                height={58}
-              /> */}
             </a>
           </div>
           <div className="-my-2 -mr-2 laptop:hidden">
@@ -92,13 +85,6 @@ export default function Navbar() {
           <div className="divide-gray-50 divide-y-2 rounded-lg bg-white shadow-lg ring-1 ring-black ring-opacity-5">
             <div className="px-5 pt-5 pb-6">
               <div className="flex items-center justify-between">
-                <div>
-                  <img
-                    className="h-8 w-auto"
-                    src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
-                    alt="Your Company"
-                  />
-                </div>
                 <div className="-mr-2">
                   <Popover.Button className="text-gray-400 hover:bg-gray-100 hover:text-gray-500 focus:ring-indigo-500 inline-flex items-center justify-center rounded-md bg-white p-2 focus:outline-none focus:ring-2 focus:ring-inset">
                     <span className="sr-only">Close menu</span>
@@ -118,20 +104,20 @@ export default function Navbar() {
                   Home
                 </NavLink>
                 <NavLink
-                  to="/introduction"
-                  className={({ isActive }) =>
-                    isActive ? activeClassName : undefined
-                  }
-                >
-                  introduction
-                </NavLink>
-                <NavLink
                   to="/aboutus"
                   className={({ isActive }) =>
                     isActive ? activeClassName : undefined
                   }
                 >
-                  About US
+                  About us
+                </NavLink>
+                <NavLink
+                  to="/ouractivities"
+                  className={({ isActive }) =>
+                    isActive ? activeClassName : undefined
+                  }
+                >
+                  Our activities
                 </NavLink>
               </div>
             </div>

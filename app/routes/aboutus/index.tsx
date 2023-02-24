@@ -42,7 +42,7 @@ export default function AboutUs() {
     <div className="min-h-screen w-full bg-intro-back bg-cover bg-center object-cover py-32 py-24">
       {location.pathname === "/aboutus" && <Navbar />}
       <div className="mx-auto max-w-7xl px-6 laptop:px-8">
-        <div className="mx-auto max-w-2xl laptop:text-center">
+        <div className="mx-auto max-w-2xl text-center">
           <h1 className="text-indigo-600 text-5xl font-semibold  tracking-tight">
             About us
           </h1>
