@@ -5,12 +5,8 @@ import OurActivities from "./ouractivities";
 export default function Index() {
   return (
     <>
-      <div className="min-h-screen w-full bg-opacity-70 bg-cover-pic bg-cover bg-center object-cover">
+      <div className="min-h-screen w-full bg-opacity-70 bg-turk-steps bg-cover bg-center object-cover">
         <Navbar />
-
-        <p className="absolute bottom-5 left-10 text-white">
-          Photo by: Csoma Sándor
-        </p>
       </div>
 
       <Aboutus />
