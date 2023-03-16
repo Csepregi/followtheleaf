@@ -8,6 +8,7 @@ module.exports = {
         "introduction-pic": "url('/introduction.jpg')",
         "whatwe-pic": "url('/whatwe.png')",
         "intro-back": "url('/leaf.jpg')",
+        "logo-leaf": "url('/logoLeaf.png')",
       },
     },
     fontSize: {

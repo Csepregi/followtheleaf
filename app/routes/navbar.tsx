@@ -22,13 +22,16 @@ export default function Navbar() {
           : "invisible top-0 transition-opacity delay-500 duration-300 ease-out"
       )}
     >
-      <div className="mx-auto max-w-7xl  px-6 py-2">
+      <div className="mx-auto max-w-7xl  px-6">
         <div className="flex items-center justify-between  py-2 laptop:justify-start">
-          <div className=" inline-flex  laptop:w-0 laptop:flex-1">
-            <a href="/">
-              <h1 className="text-3xl  font-bold uppercase text-green">
-                Follow The Leaf
-              </h1>
+          <div className="flex desktop:flex-1">
+            <a href="/" className="-m-1.5 p-1.5">
+              <span className="sr-only">Your Company</span>
+              <img
+                className="stroke-green-900 h-16 w-auto"
+                src="./logoLeaf.png"
+                alt=""
+              />
             </a>
           </div>
           <div className="-my-2 -mr-2 laptop:hidden">

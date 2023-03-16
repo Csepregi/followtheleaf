@@ -7,17 +7,7 @@ export default function Index() {
     <>
       <div className="min-h-screen w-full bg-opacity-70 bg-cover-pic bg-cover bg-center object-cover">
         <Navbar />
-        <main>
-          <div className="lg:px-8  px-6">
-            <div className="sm:pt-48 sm:pb-40 max-w-3xl items-start pt-20 pb-32">
-              <div>
-                <h2 className="leading-19 invisible  mt-6 block text-5xl text-orange laptop:visible">
-                  Explore together the way to live in a more sustainable world
-                </h2>
-              </div>
-            </div>
-          </div>
-        </main>
+
         <p className="absolute bottom-5 left-10 text-white">
           Photo by: Csoma Sándor
         </p>
