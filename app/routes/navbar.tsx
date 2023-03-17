@@ -68,6 +68,14 @@ export default function Navbar() {
             >
               Our activities
             </NavLink>
+            <NavLink
+              to="/ourteam"
+              className={({ isActive }) =>
+                isActive ? activeClassName : undefined
+              }
+            >
+              Our team
+            </NavLink>
           </Popover.Group>
         </div>
       </div>
@@ -121,6 +129,14 @@ export default function Navbar() {
                   }
                 >
                   Our activities
+                </NavLink>
+                <NavLink
+                  to="/ourteam"
+                  className={({ isActive }) =>
+                    isActive ? activeClassName : undefined
+                  }
+                >
+                  Our team
                 </NavLink>
               </div>
             </div>

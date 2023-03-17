@@ -1,6 +1,7 @@
 import Navbar from "./navbar";
 import Aboutus from "./aboutus";
 import OurActivities from "./ouractivities";
+import OurTeam from "./ourTeam";
 
 export default function Index() {
   return (
@@ -11,6 +12,7 @@ export default function Index() {
 
       <Aboutus />
       <OurActivities />
+      <OurTeam />
       <div className="flex flex-col-reverse divide-x-[3px] divide-black">
         <footer className="bg-blueGray-200 relative pt-8 pb-6">
           <div className="container mx-auto px-4">
