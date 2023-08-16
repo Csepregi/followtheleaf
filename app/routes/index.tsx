@@ -6,7 +6,7 @@ import OurTeam from "./ourTeam";
 export default function Index() {
   return (
     <>
-      <div className="min-h-screen w-full bg-opacity-70 bg-turk-steps bg-cover bg-center object-cover">
+      <div className="min-h-screen w-full  bg-gradient  opacity-75 bg-turk-steps bg-cover bg-center object-cover">
         <Navbar />
       </div>
       <Aboutus />

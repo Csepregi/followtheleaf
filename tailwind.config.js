@@ -6,7 +6,7 @@ module.exports = {
       backgroundImage: {
         "cover-pic": "url('/flamingo.jpg')",
         "mare-pic": "url('/mare.JPG')",
-        "turk-steps": "url('/turksteps.jpg')",
+        "turk-steps": "url('/ficuzza.jpg')",
         "introduction-pic": "url('/introduction.jpg')",
         "whatwe-pic": "url('/whatwe.png')",
         "intro-back": "url('/leaf.jpg')",

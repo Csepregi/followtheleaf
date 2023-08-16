@@ -18,11 +18,11 @@ export default function Navbar() {
     <Popover
       className={classNames(
         scrollPositions
-          ? "fixed top-0  w-full bg-white transition"
-          : "invisible top-0 transition-opacity delay-500 duration-300 ease-out"
+          ? "fixed top-0  w-full bg-white transition opacity-100"
+          : "invisible top-0 transition-opacity delay-500 duration-300 ease-out bg-opacity-100"
       )}
     >
-      <div className="mx-auto max-w-7xl  px-6">
+      <div className="mx-auto max-w-7xl  px-6 bg-opacity-100">
         <div className="flex items-center justify-between  py-2 laptop:justify-start">
           <div className="flex desktop:flex-1">
             <a href="/" className="-m-1.5 p-1.5">
@@ -93,7 +93,7 @@ export default function Navbar() {
           focus
           className="absolute inset-x-0 top-0 origin-top-right transform p-2 transition laptop:hidden"
         >
-          <div className="divide-gray-50 divide-y-2 rounded-lg bg-white shadow-lg ring-1 ring-black ring-opacity-5">
+          <div className="divide-gray-50 divide-y-2 rounded-lg bg-white shadow-lg ring-1 ring-black ring-opacity-5 opacity-100">
             <div className="px-5 pt-5 pb-6">
               <div className="flex items-center justify-between">
                 <div className="-mr-2">
