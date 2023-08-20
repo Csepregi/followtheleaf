@@ -40,8 +40,9 @@ export default function App() {
       <head>
         <Meta />
         <Links />
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet"/>
       </head>
-      <body className="h-full">
+      <body className="h-full font-montserrat">
         <Outlet />
         <ScrollRestoration />
         <Scripts />

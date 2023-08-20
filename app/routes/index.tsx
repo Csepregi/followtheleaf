@@ -6,9 +6,27 @@ import OurTeam from "./ourTeam";
 export default function Index() {
   return (
     <>
-      <div className="min-h-screen w-full  bg-gradient  opacity-75 bg-turk-steps bg-cover bg-center object-cover">
-        <Navbar />
-      </div>
+      <Navbar />
+        <main>
+    
+          <section className="tablet:flex justify-between 
+                          items-center
+                          py-20 px-10 bg-turk-steps  bg-cover  min-h-screen w-full text-white
+                          "
+                  id="About">
+              <div className="absolute tablet:top-40 tablet:left-0 tablet:right-0 text-center">
+                  <h2 className="text-3xl tablet:text-4xl 
+                            desktop:text-6xl text-gray-100 
+                            tablet:mb-6">
+                    In nature, nothing is perfect and everything is perfect.
+                  </h2>
+                  <p className="mb-6">
+                  Alice Walker
+                  </p> 
+              </div>
+            
+          </section>    
+        </main>
       <Aboutus />
       <OurActivities />
 

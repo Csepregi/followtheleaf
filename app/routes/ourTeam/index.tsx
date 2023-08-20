@@ -26,7 +26,7 @@ export default function OurTeam() {
                     <div className="absolute -mt-20 flex w-full justify-center">
                       <div className="h-32 w-32">
                         <img
-                          src="./claudia.jpeg"
+                          src="./claudiaprofile.jpeg"
                           alt="claudia"
                           className="h-full w-full rounded-full object-cover shadow-md"
                         />
@@ -40,20 +40,10 @@ export default function OurTeam() {
                         Founder
                       </p>
                       <p className="text-gray-600 pt-3 text-center text-base font-normal">
-                        Professional energy journalist, with expertise that
-                        ranges from environmental protection to climate change,
-                        from renewables to flexible electricity, from the
-                        geopolitics of energy to the effects of biodiversity
-                        loss on our health and everyday life.
+                      Claudia is a professional energy journalist, with expertise that ranges from environmental protection to climate change, from the geopolitics of energy to the effects of biodiversity loss on our health and everyday life. After participating in several youth exchanges, training and EVS, she decided it was time to give back and share her knowledge.
                       </p>
                       <div className="flex w-full justify-center pt-5 pb-5">
-                        <div aria-label="FollowTheLeaf" role="img">
-                          <img
-                            className="h-8 w-max laptop:h-16"
-                            src="./Logo.png"
-                            alt="logo"
-                          />
-                        </div>
+                        
                       </div>
                     </div>
                   </div>
@@ -66,7 +56,7 @@ export default function OurTeam() {
                     <div className="absolute -mt-20 flex w-full justify-center">
                       <div className="h-32 w-32">
                         <img
-                          src="./gabi.jpeg"
+                          src="./gabiprofile.jpg"
                           alt="gabi"
                           className="h-full w-full rounded-full object-cover shadow-md"
                         />
@@ -77,22 +67,13 @@ export default function OurTeam() {
                         Csepregi Gábor
                       </h1>
                       <p className="text-gray-800 text-center text-sm">
-                        {" "}
-                        Vice President
+                        Project Coordinator
                       </p>
                       <p className="text-gray-600 pt-3 text-center text-base font-normal">
-                        IT developer and believes that digital skills must be
-                        acquired by everybody. Hungarian national and former
-                        member of the rowing national team,
+                      Gábor is an IT developer and a former member of the Hungarian rowing national team. A profound nature lover, he envisions a future in which younger generations can enjoy the same wonders we are so lucky to be surrounded by today.
                       </p>
                       <div className="flex w-full justify-center pt-5 pb-5">
-                        <div aria-label="FollowTheLeaf" role="img">
-                          <img
-                            className="h-8 w-max laptop:h-16"
-                            src="./Logo.png"
-                            alt="logo"
-                          />
-                        </div>
+                        
                       </div>
                     </div>
                   </div>

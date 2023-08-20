@@ -3,15 +3,21 @@ module.exports = {
   content: ["./app/**/*.{ts,tsx,jsx,js}"],
   theme: {
     extend: {
+      textUnderlineOffset: {
+        3: '3px',
+      },
       backgroundImage: {
         "cover-pic": "url('/flamingo.jpg')",
         "mare-pic": "url('/mare.JPG')",
-        "turk-steps": "url('/ficuzza.jpg')",
+        "turk-steps": "url('/fogli.jpg')",
         "introduction-pic": "url('/introduction.jpg')",
         "whatwe-pic": "url('/whatwe.png')",
         "intro-back": "url('/leaf.jpg')",
         "logo-leaf": "url('/logoLeaf.png')",
       },
+      fontFamily: {
+        'montserrat': ['Montserrat'],
+    }
     },
     fontSize: {
       sm: "0.8rem",

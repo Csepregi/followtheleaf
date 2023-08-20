@@ -1,13 +1,14 @@
 import { Fragment } from "react";
 import { Popover, Transition } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
-import { NavLink } from "@remix-run/react";
+import { Link, NavLink } from "@remix-run/react";
 import { useScrollPostion } from "~/hooks/useScrollPosition";
 
 export default function Navbar() {
   const scrollPositions = useScrollPostion();
 
-  const activeClassName = "underline decoration-green-800";
+  const activeClassName = "underline text-2xl font-bold";
+  const navLink = "text-2xl font-semibold";
   console.log("scrollpo ", scrollPositions);
 
   function classNames(...classes: any) {
@@ -24,11 +25,11 @@ export default function Navbar() {
     >
       <div className="mx-auto max-w-7xl  px-6 bg-opacity-100">
         <div className="flex items-center justify-between  py-2 laptop:justify-start">
-          <div className="flex desktop:flex-1">
+          <div className="flex desktop:flex-1 font-bold">
             <a href="/" className="-m-1.5 p-1.5">
               <span className="sr-only">Your Company</span>
               <img
-                className="stroke-green-900 h-16 w-auto"
+                className="stroke-zinc-950 h-16 w-30 w-auto "
                 src="./logoLeaf.png"
                 alt=""
               />
@@ -47,23 +48,23 @@ export default function Navbar() {
             <NavLink
               to="/"
               className={({ isActive }) =>
-                isActive ? activeClassName : undefined
+                isActive ? activeClassName : navLink
               }
             >
               Home
             </NavLink>
             <NavLink
-              to="/aboutus"
-              className={({ isActive }) =>
-                isActive ? activeClassName : undefined
-              }
-            >
-              About us
-            </NavLink>
+                to="/aboutus"
+                className={({ isActive }) =>
+                  isActive ? activeClassName : navLink
+                }
+              >
+                About us
+              </NavLink>
             <NavLink
               to="/ouractivities"
               className={({ isActive }) =>
-                isActive ? activeClassName : undefined
+                isActive ? activeClassName : navLink
               }
             >
               Our activities
@@ -71,7 +72,7 @@ export default function Navbar() {
             <NavLink
               to="/ourteam"
               className={({ isActive }) =>
-                isActive ? activeClassName : undefined
+                isActive ? activeClassName : navLink
               }
             >
               Our team
@@ -104,42 +105,14 @@ export default function Navbar() {
                 </div>
               </div>
             </div>
-            <div className="space-y-6 py-6 px-5">
-              <div className="grid grid-cols-2 gap-y-4 gap-x-8">
-                <NavLink
-                  to="/"
-                  className={({ isActive }) =>
-                    isActive ? activeClassName : undefined
-                  }
-                >
-                  Home
-                </NavLink>
-                <NavLink
-                  to="/aboutus"
-                  className={({ isActive }) =>
-                    isActive ? activeClassName : undefined
-                  }
-                >
-                  About us
-                </NavLink>
-                <NavLink
-                  to="/ouractivities"
-                  className={({ isActive }) =>
-                    isActive ? activeClassName : undefined
-                  }
-                >
-                  Our activities
-                </NavLink>
-                <NavLink
-                  to="/ourteam"
-                  className={({ isActive }) =>
-                    isActive ? activeClassName : undefined
-                  }
-                >
-                  Our team
-                </NavLink>
-              </div>
+            <div className="mobile:hidden" id="mobile-menu">
+            <div className="space-y-1 px-2 pb-3 pt-2">
+              <Link to="/" className="bg-gray-900 text-black block rounded-md px-3 py-2 text-base font-medium" aria-current="page">Home</Link>
+              <a href="/aboutus" className="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium">About Us</a>
+              <a href="/ouractivities" className="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium">Our activities</a>
+              <a href="/ourteam" className="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium"> Our team</a>
             </div>
+          </div>
           </div>
         </Popover.Panel>
       </Transition>
