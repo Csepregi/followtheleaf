@@ -48,6 +48,7 @@ module.exports = {
       bermuda: "#78dcca",
     },
     screens: {
+      smallScreen: "340px",
       tablet: "640px",
       // => @media (min-width: 640px) { ... }
 

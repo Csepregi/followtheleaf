@@ -7,15 +7,15 @@ export default function Activity() {
     <section className="p-4 desktop:p-8 dark:bg-gray-800 dark:text-gray-100">
          {location.pathname === "/ouractivities/activity" && <Navbar />}
 	<div className="container mx-auto space-y-12">
-		<div className="flex flex-col overflow-hidden rounded-md shadow-sm desktop:flex-row pt-20">
+		<div className="flex flex-col overflow-hidden rounded-md shadow-sm tablet:flex-row pt-20">
 			<img src="/circular-economy.jpg" alt="circular-economy" className="h-50 w-90 tablet:h-80 dark:bg-gray-500 aspect-video" />
 			<div className="flex flex-col justify-center flex-1 p-6 dark:bg-gray-900">
 				<h3 className="text-center text-3xl font-bold">Circular economy/zero waste</h3>
-				<p className="my-6 dark:text-gray-400 text-xl">Circular economy is not only a lifestyle for individuals but it can also be a successful business model for companies and entrepreneurs. Through our projects, we aim to create a new generation of users rather than owners.</p>
+				<p className="my-6 dark:text-gray-400 text-xl ">Circular economy is not only a lifestyle for individuals but it can also be a successful business model for companies and entrepreneurs. Through our projects, we aim to create a new generation of users rather than owners.</p>
 				
 			</div>
 		</div>
-		<div className="flex flex-col overflow-hidden rounded-md shadow-sm desktop:flex-row-reverse">
+		<div className="flex flex-col overflow-hidden rounded-md shadow-sm tablet:flex-row-reverse">
 			<img src="/sustainable-agriculture.jpg" alt="sustainable-agriculture" className="h-50 w-90 tablet:h-80 dark:bg-gray-500 aspect-video" />
 			<div className="flex flex-col justify-center flex-1 p-6 dark:bg-gray-900">
 				<h3 className="text-center text-3xl font-bold">Sustainable agriculture</h3>
@@ -23,7 +23,7 @@ export default function Activity() {
 				
 			</div>
 		</div>
-		<div className="flex flex-col overflow-hidden rounded-md shadow-sm desktop:flex-row">
+		<div className="flex flex-col overflow-hidden rounded-md shadow-sm tablet:flex-row">
 			<img src="/sustainable-mobility.jpg" alt="sustainable-mobility" className="h-50 w-90 tablet:h-80 dark:bg-gray-500 aspect-video" />
 			<div className="flex flex-col justify-center flex-1 p-6 dark:bg-gray-900">
 				<h3 className="text-center text-3xl font-bold">New and sustainable mobility </h3>
@@ -31,7 +31,7 @@ export default function Activity() {
 				
 			</div>
 		</div>
-        <div className="flex flex-col overflow-hidden rounded-md shadow-sm desktop:flex-row-reverse">
+        <div className="flex flex-col overflow-hidden rounded-md shadow-sm tablet:flex-row-reverse">
 			<img src="/cleaner-oceans.jpg" alt="cleaner-oceans" className="h-50 w-90 tablet:h-80 dark:bg-gray-500 aspect-video" />
 			<div className="flex flex-col justify-center flex-1 p-6 dark:bg-gray-900">
 				<h3 className="text-center text-3xl font-bold">Cleaner oceans </h3>
@@ -39,15 +39,15 @@ export default function Activity() {
 				
 			</div>
 		</div>
-        <div className="flex flex-col overflow-hidden rounded-md shadow-sm desktop:flex-row">
+        <div className="flex flex-col overflow-hidden rounded-md shadow-sm tablet:flex-row">
 			<img src="/biodiversity.jpg" alt="biodiversity" className="h-50 w-90 tablet:h-80 dark:bg-gray-500 aspect-video" />
 			<div className="flex flex-col justify-center flex-1 p-6 dark:bg-gray-900">
 				<h3 className="text-center text-3xl font-bold">Biodiversity protection</h3>
-				<p className="my-6 dark:text-gray-400 text-xl">Did you know that in Sicily, there are more than 3,000 types of plants, over 200 bird species and 40 different mammals? Moreover, 245 Natura 2000 sites protect 470,000 hectares of land, in other words, 18% of the island. But all of this is at risk and it is also our job to protect what surrounds us, without taking it for granted. Let’s keep in touch with us and Mother Nature!</p>
+				<p className="my-6 dark:text-gray-400 text-xl ">Did you know that in Sicily, there are more than 3,000 types of plants, over 200 bird species and 40 different mammals? Moreover, 245 Natura 2000 sites protect 470,000 hectares of land, in other words, 18% of the island. But all of this is at risk and it is also our job to protect what surrounds us, without taking it for granted. Let’s keep in touch with us and Mother Nature!</p>
 				
 			</div>
 		</div>
-        <div className="flex flex-col overflow-hidden rounded-md shadow-sm desktop:flex-row-reverse">
+        <div className="flex flex-col overflow-hidden rounded-md shadow-sm tablet:flex-row-reverse">
 			<img src="/sustainable-tourism.jpg" alt="" className="h-50 w-90 tablet:h-80 dark:bg-gray-500 aspect-video" />
 			<div className="flex flex-col justify-center flex-1 p-6 dark:bg-gray-900">
 				<h3 className="text-center text-3xl font-bold">Sustainable architecture/tourism</h3>

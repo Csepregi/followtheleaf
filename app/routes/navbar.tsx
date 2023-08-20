@@ -24,7 +24,7 @@ export default function Navbar() {
       )}
     >
       <div className="mx-auto max-w-7xl  px-6 bg-opacity-100">
-        <div className="flex items-center justify-between  py-2 laptop:justify-start">
+        <div className="flex items-center justify-between  py-2 ">
           <div className="flex desktop:flex-1 font-bold">
             <a href="/" className="-m-1.5 p-1.5">
               <span className="sr-only">Your Company</span>
@@ -35,7 +35,7 @@ export default function Navbar() {
               />
             </a>
           </div>
-          <div className="-my-2 -mr-2 laptop:hidden">
+          <div className="-my-2 -mr-2 smallScreen:hidden">
             <Popover.Button className="text-gray-400 hover:bg-gray-100 hover:text-gray-500 focus:ring-indigo-500 inline-flex items-center justify-center rounded-md bg-white p-2 focus:outline-none focus:ring-2 focus:ring-inset">
               <span className="sr-only">Open menu</span>
               <Bars3Icon className="h-6 w-6" aria-hidden="true" />

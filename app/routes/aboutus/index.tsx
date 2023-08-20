@@ -28,9 +28,9 @@ export default function AboutUs() {
     <div className="w-full  object-cover py-32 py-24">
       {location.pathname === "/aboutus" && <Navbar />}
       <section className="text-gray-600 body-font">
-  <div className="container px-5 py-6 mx-auto">
+  <div className="container px-5 py-6 mx-auto w-full ">
     
-    <div className="flex flex-wrap -m-2 -mx-8 -mb-10 -mt-4 tablet:space-y-0 space-y-2 text-center">
+    <div className="flex flex-wrap -m-2 -mx-8 -mb-10 -mt-4 tablet:space-y-0 space-y-2 text-center grid place-items-center">
     {features.map((feature) => (
       <div key={feature.name}  className="p-2 tablet:w-1/3  space-y-16  grid  place-items-center  overflow-x-auto">
         <img alt={feature.icon} src={feature.icon} className="w-20 h-20"/>
