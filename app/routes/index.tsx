@@ -1,7 +1,6 @@
 import Navbar from "./navbar";
 import Aboutus from "./aboutus";
 import OurActivities from "./ouractivities";
-import OurTeam from "./ourTeam";
 
 export default function Index() {
   return (
@@ -15,7 +14,7 @@ export default function Index() {
                           "
                   id="About">
               <div className="absolute tablet:top-40 tablet:left-0 tablet:right-0 text-center">
-                  <h2 className="text-3xl tablet:text-4xl 
+                  <h2 className="text-3xl tablet:text-5xl 
                             desktop:text-6xl text-gray-100 
                             tablet:mb-6">
                     In nature, nothing is perfect and everything is perfect.
@@ -30,7 +29,7 @@ export default function Index() {
       <Aboutus />
       <OurActivities />
 
-      <div className=" bg-gray-900">
+      <div className="bg-gray-900">
         <div className="mx-auto max-w-2xl py-10 text-black">
           <div className="text-center">
             <h3 className="mb-3 text-3xl"> Let's keep in touch! </h3>
@@ -50,7 +49,7 @@ export default function Index() {
             </a>
         </div>
             <div className="my-10 flex justify-center">
-              <div className="mx-2 flex w-auto w-52 items-center rounded-lg border px-4 py-2">
+              <div className="mx-2 flex w-auto w-52 items-center rounded-lg text-green border px-4 py-2">
                 <img
                   src="./logoLeaf.png"
                   className="md:w-16 w-max"

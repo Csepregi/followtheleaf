@@ -24,39 +24,24 @@ const features = [
 
 export default function AboutUs() {
   let location = useLocation();
-  return (
-    <div className="w-full  object-cover py-32 py-24">
-      {location.pathname === "/aboutus" && <Navbar />}
-      <section className="text-gray-600 body-font">
-  <div className="container px-5 py-6 mx-auto w-full ">
-    
-    <div className="flex flex-wrap -m-2 -mx-8 -mb-10 -mt-4 tablet:space-y-0 text-center grid place-items-center">
-    {features.map((feature) => (
-      <div key={feature.name}  className="p-2 tablet:w-1/3  space-y-8  grid  place-items-center  overflow-x-auto">
-        <img alt={feature.icon} src={feature.icon} className="w-20 h-20"/>
-        {/* <div className="w-12 h-12 inline-flex items-center justify-center rounded-full bg-indigo-100 text-indigo-500 mb-4 flex-shrink-0">
-          <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" className="w-6 h-6" viewBox="0 0 24 24">
-            <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
-            
-          </svg>
-        </div> */}
-        <div className="">
-          <h2 className="text-gray-900  title-font font-bold text-xl mb-2">{feature.name}</h2>
-          <p className="leading-relaxed text-lg"> {feature.description}</p>
-        </div>
-      </div>
-      ))}
-     
-    </div>
-    {/* <div aria-hidden="true" className="hidden mt-10 desktop:block mt-30">
-        <img
-          src="https://source.unsplash.com/random/400x650/?sicily"
-          alt=""
-          className="bg-gray-500 mx-auto rounded-lg shadow-lg"
-        />
-    </div> */}
-  </div>
-</section>
-    </div>
-  );
+    return (
+          <div>
+            {location.pathname === "/aboutus" && <Navbar />}
+                <div className="container mx-auto grid smallScreen:grid-cols-1 laptop:grid-cols-2 desktop:grid-cols-3 xl:grid-cols-3 xl:px-20 px-10 py-20 gap-6  h-screen flex items-center justify-center">
+                 {features.map((feature) => ( 
+                    <div key={feature.name}>
+                       <div className="flex flex-col items-center justify-center mt-10">
+                            <img alt={feature.icon} src={feature.icon} className="mb-10 w-20 h-20"/>
+                            <p className="text-base font-semibold leading-4 my-2 text-xl text-gray-800">{feature.name}</p>
+                        </div>
+                        <div className="group w-full bg-white relative flex flex-col items-center  shadow-md laptop:p-12 p-6">
+                            <div className="text-gray-600  flex flex-col items-center">
+                                <p className="xl:w-80 text-lg leading-normal text-center mt-4">{feature.description}</p>
+                            </div>
+                        </div>
+                    </div>
+                    ))}
+                </div>
+            </div>
+    );
 }
