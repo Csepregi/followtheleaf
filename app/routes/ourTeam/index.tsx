@@ -6,7 +6,7 @@ export default function OurTeam() {
   return (
     <div className="min-h-screen w-full bg-white py-32 py-24">
       {location.pathname === "/ourteam" && <Navbar />}
-      <div className="mb-16">
+      <div>
         <div>
           <div className="container mx-auto flex justify-center pt-16">
             <div></div>

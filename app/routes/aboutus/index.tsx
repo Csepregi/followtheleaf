@@ -27,11 +27,11 @@ export default function AboutUs() {
     return (
           <div>
             {location.pathname === "/aboutus" && <Navbar />}
-                <div className="container mx-auto grid smallScreen:grid-cols-1 laptop:grid-cols-2 desktop:grid-cols-3 xl:grid-cols-3 xl:px-20 px-10 py-20 gap-6  h-screen flex items-center justify-center">
+                <div className="container mx-auto grid smallScreen:grid-cols-1 laptop:grid-cols-2 desktop:grid-cols-3 xl:grid-cols-3 xl:px-20 px-10 py-20 gap-6">
                  {features.map((feature) => ( 
                     <div key={feature.name}>
                        <div className="flex flex-col items-center justify-center mt-10">
-                            <img alt={feature.icon} src={feature.icon} className="mb-10 w-20 h-20"/>
+                            <img alt={feature.icon} src={feature.icon} className="mb-10 w-24 h-24"/>
                             <p className="text-base font-semibold leading-4 my-2 text-xl text-gray-800">{feature.name}</p>
                         </div>
                         <div className="group w-full bg-white relative flex flex-col items-center  shadow-md laptop:p-12 p-6">
