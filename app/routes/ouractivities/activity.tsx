@@ -51,7 +51,7 @@ export default function Activity() {
 			<img src="/sustainable-tourism.jpg" alt="" className="h-50 w-90 tablet:h-80 dark:bg-gray-500 aspect-video" />
 			<div className="flex flex-col justify-center flex-1 p-6 dark:bg-gray-900">
 				<h3 className="text-center text-3xl font-bold">Sustainable architecture/tourism</h3>
-				<p className="my-6 dark:text-gray-400 text-xl">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor aliquam possimus quas, error esse quos.</p>
+				<p className="my-6 dark:text-gray-400 text-xl">Sicily thrives on tourism. Can it be more sustainable? Yes it can. Old buildings can be more efficient and new ones can create added value by showcasing what the territory has to offer. Join us in building a more sustainable approach to tourism, so that we can all enjoy the beauty of this land.</p>
 				
 			</div>
 		</div>

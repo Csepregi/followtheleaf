@@ -30,9 +30,9 @@ export default function AboutUs() {
       <section className="text-gray-600 body-font">
   <div className="container px-5 py-6 mx-auto w-full ">
     
-    <div className="flex flex-wrap -m-2 -mx-8 -mb-10 -mt-4 tablet:space-y-0 space-y-2 text-center grid place-items-center">
+    <div className="flex flex-wrap -m-2 -mx-8 -mb-10 -mt-4 tablet:space-y-0 text-center grid place-items-center">
     {features.map((feature) => (
-      <div key={feature.name}  className="p-2 tablet:w-1/3  space-y-16  grid  place-items-center  overflow-x-auto">
+      <div key={feature.name}  className="p-2 tablet:w-1/3  space-y-8  grid  place-items-center  overflow-x-auto">
         <img alt={feature.icon} src={feature.icon} className="w-20 h-20"/>
         {/* <div className="w-12 h-12 inline-flex items-center justify-center rounded-full bg-indigo-100 text-indigo-500 mb-4 flex-shrink-0">
           <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" className="w-6 h-6" viewBox="0 0 24 24">
