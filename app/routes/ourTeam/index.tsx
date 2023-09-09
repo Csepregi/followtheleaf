@@ -6,7 +6,42 @@ export default function OurTeam() {
   return (
     <div className="min-h-screen w-full bg-white py-32 py-24">
       {location.pathname === "/ourteam" && <Navbar />}
-      <div>
+    <section className="max-w-6xl mx-auto px-4 px-6 desktop:px-4 py-12">
+        <div className="grid grid-cols-1 desktop:grid-cols-2 gap-6">
+            <div className="w-full bg-gray-900 rounded-lg sahdow-lg overflow-hidden flex flex-col laptop:flex-row">
+                <div className="w-full laptop:w-2/5 h-80">
+                    <img className="object-center object-cover w-full h-full" src="./claudiaprofile.jpeg" alt="claudia"/>
+                </div>
+                <div className="w-full laptop:w-3/5 text-left px-6 laptop:px-4 pt-0">
+                    <p className="text-2xl text-base font-bold">Claudia Patricolo</p>
+                    <p className="text-base text-gray-400 font-bold pb-2">Founder</p>
+                    <p className="text-base leading-relaxed text-gray-500 font-normal">Claudia is a professional energy journalist, with expertise that ranges from environmental protection to climate change, from the geopolitics of energy to the effects of biodiversity loss on our health and everyday life. After participating in several youth exchanges, training and EVS, she decided it was time to give back and share her knowledge.</p>
+                </div>
+            </div>
+            <div className="w-full bg-gray-900 rounded-lg sahdow-lg overflow-hidden flex flex-col laptop:flex-row">
+                <div className="w-full laptop:w-2/5 h-80">
+                    <img className="object-center object-cover w-full h-full" src="./gabiprofile.jpg" alt="gabi"/>
+                </div>
+                <div className="w-full laptop:w-3/5 text-left px-6 laptop:px-4 pt-0">
+                    <p className="text-2xl text-base font-bold">Gábor Csepregi</p>
+                    <p className="text-base text-gray-400 font-bold pb-2">Project Coordinator</p>
+                    <p className="text-base leading-relaxed text-gray-500 font-normal">Gábor is an IT developer and a former member of the Hungarian rowing national team. A profound nature lover, he envisions a future in which younger generations can enjoy the same wonders we are so lucky to be surrounded by today.</p>
+                </div>
+            </div>
+            <div className="w-full bg-gray-900 rounded-lg sahdow-lg overflow-hidden flex flex-col laptop:flex-row">
+                <div className="w-full laptop:w-2/5 h-80">
+                    <img className="object-center object-cover w-full h-full" src="./agnese.jpg" alt="agnese"/>
+                </div>
+                <div className="w-full laptop:w-3/5 text-left px-6 laptop:px-4 pt-0">
+                    <p className="text-2xl text-base font-bold">Agnese Patricolo</p>
+                    <p className="text-base text-gray-400 font-bold pb-2">Project Coordinator</p>
+                    <p className="text-base leading-relaxed text-gray-500 font-normal">Agnese is an elementary school teacher with a degree in psychology. Since her childhood she had a heartfelt love for animals and any living creature that habits our planet. In her daily life she helps changing young mindsets by raising awareness about the importance of taking care of the others.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+      {/* <div>
         <div>
           <div className="container mx-auto flex justify-center pt-16">
             <div></div>
@@ -82,7 +117,7 @@ export default function OurTeam() {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 }
