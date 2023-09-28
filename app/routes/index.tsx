@@ -1,8 +1,12 @@
+import { useTranslation } from "react-i18next";
 import Navbar from "./navbar";
 import Aboutus from "./aboutus";
 import OurActivities from "./ouractivities";
+import { LanguageProvider } from './LanguageContext'; // Import the LanguageProvider component
+
 
 export default function Index() {
+  let { t } = useTranslation();
   return (
     <>
       <Navbar />
@@ -17,7 +21,7 @@ export default function Index() {
                   <h2 className="text-3xl tablet:text-5xl 
                             desktop:text-6xl text-gray-100 
                             tablet:mb-6">
-                    In nature, nothing is perfect and everything is perfect.
+                   {t("GREETING_TEXT")}
                   </h2>
                   <p className="mb-6">
                   Alice Walker
@@ -32,7 +36,7 @@ export default function Index() {
       <div className="bg-gray-900">
         <div className="mx-auto max-w-2xl py-10 text-black">
           <div className="text-center">
-            <h3 className="mb-3 text-3xl"> Let's keep in touch! </h3>
+            <h3 className="mb-3 text-3xl">{t("KEEP_IN_TOUCH")} </h3>
             <p> e-mail: followtheleaf.sicily@gmail.com </p>
             <div className="flex justify-center mt-8 space-x-6">
             <a href="https://www.facebook.com/FollowTheLeafAssociation" className="text-gray-400 hover:text-gray-500">

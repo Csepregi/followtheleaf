@@ -1,7 +1,9 @@
 import { useLocation } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import Navbar from "../navbar";
 
 export default function OurTeam() {
+  let { t } = useTranslation();
   let location = useLocation();
   return (
     <div className="min-h-screen w-full bg-white py-32 py-24">
@@ -14,8 +16,8 @@ export default function OurTeam() {
                 </div>
                 <div className="w-full laptop:w-3/5 text-left px-6 laptop:px-4 pt-0">
                     <p className="text-2xl text-base font-bold">Claudia Patricolo</p>
-                    <p className="text-base text-gray-400 font-bold pb-2">Founder</p>
-                    <p className="text-base leading-relaxed text-gray-500 font-normal">Claudia is a professional energy journalist, with expertise that ranges from environmental protection to climate change, from the geopolitics of energy to the effects of biodiversity loss on our health and everyday life. After participating in several youth exchanges, training and EVS, she decided it was time to give back and share her knowledge.</p>
+                    <p className="text-base text-gray-400 font-bold pb-2">{t("TEAM_FOUNDER")}</p>
+                    <p className="text-base leading-relaxed text-gray-500 font-normal">{t("TEAM_FOUNDER_DESCRIPTION")}</p>
                 </div>
             </div>
             <div className="w-full bg-gray-900 rounded-lg sahdow-lg overflow-hidden flex flex-col laptop:flex-row">
@@ -24,8 +26,8 @@ export default function OurTeam() {
                 </div>
                 <div className="w-full laptop:w-3/5 text-left px-6 laptop:px-4 pt-0">
                     <p className="text-2xl text-base font-bold">Gábor Csepregi</p>
-                    <p className="text-base text-gray-400 font-bold pb-2">Project Coordinator</p>
-                    <p className="text-base leading-relaxed text-gray-500 font-normal">Gábor is an IT developer and a former member of the Hungarian rowing national team. A profound nature lover, he envisions a future in which younger generations can enjoy the same wonders we are so lucky to be surrounded by today.</p>
+                    <p className="text-base text-gray-400 font-bold pb-2">{t("TEAM_COORDINATOR")}</p>
+                    <p className="text-base leading-relaxed text-gray-500 font-normal">{t("TEAM_COORDINATOR_DESCRIPTION")}</p>
                 </div>
             </div>
             <div className="w-full bg-gray-900 rounded-lg sahdow-lg overflow-hidden flex flex-col laptop:flex-row">
@@ -34,8 +36,8 @@ export default function OurTeam() {
                 </div>
                 <div className="w-full laptop:w-3/5 text-left px-6 laptop:px-4 pt-0">
                     <p className="text-2xl text-base font-bold">Agnese Patricolo</p>
-                    <p className="text-base text-gray-400 font-bold pb-2">Project Coordinator</p>
-                    <p className="text-base leading-relaxed text-gray-500 font-normal">Agnese is an elementary school teacher with a degree in psychology. Since her childhood she had a heartfelt love for animals and any living creature that habits our planet. In her daily life she helps changing young mindsets by raising awareness about the importance of taking care of the others.</p>
+                    <p className="text-base text-gray-400 font-bold pb-2">{t("TEAM_COORDINATOR")}</p>
+                    <p className="text-base leading-relaxed text-gray-500 font-normal">{t("TEAM_COORDINATOR_DESCRIPTION_2")}</p>
                 </div>
             </div>
         </div>

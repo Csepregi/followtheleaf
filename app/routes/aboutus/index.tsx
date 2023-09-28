@@ -1,28 +1,28 @@
 import { useLocation } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import Navbar from "../navbar";
 
-const features = [
-  {
-    name: "Who we are",
-    description:
-      "Follow the Leaf exists to connect young Europeans with the natural beauty of Sicily. It was born from a couple of nature lovers and sustainability experts, with a desire to embark on a new adventure.",
-    icon: "./tropical-leaves.png"
-  },
-  {
-    name: "Our goals",
-    description:
-      "Our goal is to raise awareness about sustainability and the role that each and every one of us can play. One leaf doesn't mean much. But thousands of them make beautiful and strong trees.",
-    icon: "./leaf_leafs.png"
-  },
-  {
-    name: "Our priorities",
-    description:
-      "Enhance a change that is sustainable and at the same time inclusive. A broader change of mindset that leaves no one behind.",
-    icon: "./fern_leaves.png"
-  },
-];
 
 export default function AboutUs() {
+  let { t } = useTranslation();
+  const features = [
+    {
+      name: t('ABOUTUS_WHO_NAME'),
+      description: t('ABOUTUS_WHO_DESCRIPTION'),
+      icon: "./tropical-leaves.png"
+    },
+    {
+      name: t('ABOUTUS_GOALS_NAME'),
+      description: t('ABOUTUS_GOALS_DESCRIPTION'),
+      icon: "./leaf_leafs.png"
+    },
+    {
+      name: t('ABOUTUS_PRIORITES_NAME'),
+      description: t('ABOUTUS_PRIORITES_DESCRIPTION'),
+      icon: "./fern_leaves.png"
+    },
+  ];
+
   let location = useLocation();
     return (
           <div>
